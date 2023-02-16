@@ -1,7 +1,7 @@
 document.getElementById('save-btn').addEventListener('click', function(){
     const income = getElementValueInt('income-field');
     const savingPercentage = getElementValueInt('saving-percentage');
-    const savingAmount = income - (income * (savingPercentage/100));
+    const savingAmount = (income * (savingPercentage/100));
     
     const savingAmountStr = getElements('saving-amount');
     savingAmountStr.innerText = savingAmount;
