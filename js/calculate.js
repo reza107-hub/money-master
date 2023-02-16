@@ -1,16 +1,20 @@
-function expenseCalculate(inputId) {
-    const getElement = parseInt(document.getElementById(inputId).value);
-    return getElement;
-}
-
-document.getElementById('calculate-btn').addEventListener('click', function () {
-    const foodValue = expenseCalculate('Food-field')
-    const rentValue = expenseCalculate('Rent-field');
-    const clothesValue = expenseCalculate('Clothes-field');
-
+function expenseField(foodValue, rentValue, clothesValue, incomeValue) {
     const expense = foodValue + rentValue + clothesValue;
-
-    const expensesAmount = document.getElementById('expenses-amount');
-    expensesAmount.innerText = expense;
-
-})
+    const expensesAmount = getElements('expenses-amount');
+    const balance = getElements('remaining-balance')
+    if (incomeValue > expense && foodValue>=0 && rentValue>=0 && clothesValue>=0 && incomeValue>=0) {
+        expensesAmount.innerText = expense;
+        const remainingBalance = incomeValue - expense;
+        balance.innerText = remainingBalance;
+    }
+    else {
+        alert('invalid input')
+    }
+}
+document.getElementById('calculate-btn').addEventListener('click', function () {
+    const foodValue = getElementValueInt('Food-field')
+    const rentValue = getElementValueInt('Rent-field');
+    const clothesValue = getElementValueInt('Clothes-field');
+    const incomeValue = getElementValueInt('income-field');
+    expenseField(foodValue, rentValue, clothesValue, incomeValue);
+});
