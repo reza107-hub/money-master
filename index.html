@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Money Master</title>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css"
       rel="stylesheet"
@@ -81,23 +81,24 @@
           <div>
             <p>
               <span class="mr-3">Save:</span>
-              <input class="bg-[#DCDCDC] w-28 h-9" type="text" name="" id="" />
+              <input class="bg-[#DCDCDC] w-28 h-9" type="text" name="" id="saving-percentage" />
               &nbsp; % &nbsp;
-              <button
+              <button id="save-btn"
                 class="bg-[#59A5FF] my-6 text-white px-14 py-2 shadow-sm hover:bg-blue-900 rounded-lg"
               >
                 Save
               </button>
             </p>
           </div>
-          <p class="font-bold text-lg mt-3">Saving Amount: <span>0</span></p>
+          <p class="font-bold text-lg mt-3">Saving Amount: <span id="saving-amount">0</span></p>
           <p class="font-bold text-lg mt-3">
-            Remaining Balance: <span>0</span>
+            Remaining Balance: <span id="remaining-bal-after-saving">0</span>
           </p>
         </div>
       </div>
     </section>
     <script src="js/utilites.js"></script>
     <script src="js/calculate.js"></script>
+    <script src="js/save.js"></script>
   </body>
 </html>

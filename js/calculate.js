@@ -4,8 +4,8 @@ function expenseField(foodValue, rentValue, clothesValue, incomeValue) {
     const balance = getElements('remaining-balance')
     if (incomeValue > expense && foodValue>=0 && rentValue>=0 && clothesValue>=0 && incomeValue>=0) {
         expensesAmount.innerText = expense;
-        const remainingBalance = incomeValue - expense;
-        balance.innerText = remainingBalance;
+        const remainingAmount = incomeValue - expense;
+        balance.innerText = remainingAmount;
     }
     else {
         alert('invalid input')
