@@ -1,14 +1,20 @@
 function expenseField(foodValue, rentValue, clothesValue, incomeValue) {
     const expense = foodValue + rentValue + clothesValue;
     const expensesAmount = getElements('expenses-amount');
+    expensesAmount.innerText = '';
     const balance = getElements('remaining-balance')
-    if (incomeValue > expense && foodValue>=0 && rentValue>=0 && clothesValue>=0 && incomeValue>=0) {
-        expensesAmount.innerText = expense;
-        const remainingAmount = incomeValue - expense;
-        balance.innerText = remainingAmount;
+    balance.innerText = '';
+    if (incomeValue > expense) {
+        if (foodValue >= 0 && rentValue >= 0 && clothesValue >= 0 && incomeValue >= 0) {
+            expensesAmount.innerText = expense;
+            const remainingAmount = incomeValue - expense;
+            balance.innerText = remainingAmount;
+        } else{
+            alert('wrong input')
+        }
     }
     else {
-        alert('invalid input')
+        alert('No income')
     }
 }
 document.getElementById('calculate-btn').addEventListener('click', function () {
